@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UPI Checkout & Payment | Kesar Haat (Bazaar-e-Koshur)</title>
+  <meta name="description" content="Complete your Kesar Haat order securely via UPI QR scan and WhatsApp confirmation.">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            kesar: {
+              red: '#8B1E1E',
+              crimson: '#6E1414',
+              saffron: '#D35400',
+              gold: '#C59B27',
+              cream: '#FAF7F2',
+              sand: '#F3EBDD',
+              charcoal: '#1F1D1A'
+            }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-kesar-cream text-kesar-charcoal antialiased flex flex-col min-h-screen">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-kesar-crimson text-[#F3EBDD] text-xs font-medium py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2">
+    <span class="text-[#E6CA65]">✦</span>
+    <span>Secure UPI Payment • 100% Genuine Kashmiri Harvest • Pan-India Courier</span>
+    <span class="text-[#E6CA65]">✦</span>
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-full bg-kesar-red flex items-center justify-center text-white font-serif text-2xl font-bold shadow-md border-2 border-kesar-gold/60 group-hover:scale-105 transition-transform">
+          K
+        </div>
+        <div>
+          <span class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-kesar-red block leading-none">KESAR HAAT</span>
+          <span class="text-[11px] uppercase tracking-widest text-kesar-saffron font-semibold block mt-0.5">Bazaar-e-Koshur</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="index.html" class="text-kesar-charcoal/80 hover:text-kesar-red transition-colors">Home</a>
+        <a href="catalog.html" class="text-kesar-charcoal/80 hover:text-kesar-red transition-colors">Catalogue & Spices</a>
+        <a href="about.html" class="text-kesar-charcoal/80 hover:text-kesar-red transition-colors">Our Story & Heritage</a>
+      </nav>
+
+      <!-- Cart Action -->
+      <div class="flex items-center gap-4">
+        <a href="cart.html" class="text-xs font-semibold text-kesar-crimson hover:underline flex items-center gap-1">
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span>Back to Basket</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4 w-full">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-kesar-gold/20">
+      <div>
+        <h1 class="font-serif text-3xl sm:text-4xl font-bold text-kesar-crimson">Checkout & UPI Payment</h1>
+        <p class="text-xs sm:text-sm text-stone-500 mt-1">Scan the official QR code to complete your payment, then confirm your delivery details.</p>
+      </div>
+      <div class="flex items-center gap-2 text-xs font-semibold text-emerald-800 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200">
+        <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+        <span>Official Merchant: Sandeep Tikoo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Checkout Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-grow">
+    
+    <!-- Empty Cart Notice -->
+    <div id="checkout-empty-view" class="hidden max-w-md mx-auto py-20 text-center space-y-4">
+      <div class="w-20 h-20 mx-auto rounded-full bg-kesar-sand/60 text-kesar-crimson flex items-center justify-center text-3xl font-serif">
+        <i data-lucide="shopping-bag" class="w-8 h-8"></i>
+      </div>
+      <h2 class="font-serif text-3xl font-bold text-kesar-charcoal">Your basket is empty</h2>
+      <p class="text-sm text-stone-500">Please select some authentic Kashmiri produce from our catalogue before checking out.</p>
+      <a href="catalog.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-kesar-red text-white text-xs font-bold uppercase tracking-wider shadow-md hover:bg-kesar-crimson transition-all">
+        <span>Explore Catalogue</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+
+    <!-- Active Checkout Grid -->
+    <div id="checkout-active-grid" class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- Left Column: Shipping Form & Order Review -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <!-- Step 1: Customer Details -->
+        <div class="bg-white rounded-3xl border border-kesar-gold/30 p-6 sm:p-8 shadow-sm space-y-5">
+          <div class="flex items-center gap-3 pb-3 border-b border-stone-100">
+            <span class="w-7 h-7 rounded-full bg-kesar-red text-white text-xs font-bold flex items-center justify-center">1</span>
+            <h2 class="font-serif text-2xl font-bold text-kesar-charcoal">Delivery & Contact Information</h2>
+          </div>
+
+          <form id="delivery-form" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">Your Full Name *</label>
+              <input type="text" id="cust-name" required placeholder="e.g. Ramesh Koul" class="w-full px-4 py-2.5 text-xs sm:text-sm rounded-xl border border-stone-300 focus:outline-none focus:border-kesar-gold bg-stone-50/50">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">WhatsApp / Phone Number *</label>
+                <input type="tel" id="cust-phone" required placeholder="10-digit mobile number" class="w-full px-4 py-2.5 text-xs sm:text-sm rounded-xl border border-stone-300 focus:outline-none focus:border-kesar-gold bg-stone-50/50">
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">City &amp; Pincode *</label>
+                <input type="text" id="cust-city" required placeholder="e.g. Lucknow 226010" class="w-full px-4 py-2.5 text-xs sm:text-sm rounded-xl border border-stone-300 focus:outline-none focus:border-kesar-gold bg-stone-50/50">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">Complete Delivery Address *</label>
+              <textarea id="cust-address" required rows="2" placeholder="House/Flat number, building, landmark, and street address" class="w-full px-4 py-2.5 text-xs sm:text-sm rounded-xl border border-stone-300 focus:outline-none focus:border-kesar-gold bg-stone-50/50"></textarea>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">Special Packaging / Delivery Instructions (Optional)</label>
+              <input type="text" id="cust-notes" placeholder="e.g. Please pack extra securely for transit" class="w-full px-4 py-2.5 text-xs sm:text-sm rounded-xl border border-stone-300 focus:outline-none focus:border-kesar-gold bg-stone-50/50">
+            </div>
+          </form>
+        </div>
+
+        <!-- Step 2: Line Items Review -->
+        <div class="bg-white rounded-3xl border border-kesar-gold/30 p-6 sm:p-8 shadow-sm space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-stone-100">
+            <div class="flex items-center gap-3">
+              <span class="w-7 h-7 rounded-full bg-kesar-red text-white text-xs font-bold flex items-center justify-center">2</span>
+              <h2 class="font-serif text-2xl font-bold text-kesar-charcoal">Items in this Order</h2>
+            </div>
+            <a href="cart.html" class="text-xs font-semibold text-kesar-red hover:underline">Edit Basket</a>
+          </div>
+
+          <div id="checkout-items-list" class="divide-y divide-stone-100">
+            <!-- Dynamic items -->
+          </div>
+
+          <div class="pt-4 border-t border-stone-200 flex items-center justify-between">
+            <span class="text-sm font-bold text-stone-700">Total Payable Amount:</span>
+            <span id="checkout-total-payable" class="font-serif text-3xl font-bold text-kesar-crimson">₹ 0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: QR Code & Payment Confirmation -->
+      <div class="lg:col-span-5 space-y-6">
+        <div class="bg-white rounded-3xl border-2 border-kesar-gold/50 p-6 sm:p-8 shadow-xl space-y-6 text-center">
+          
+          <div class="space-y-1">
+            <span class="text-xs uppercase tracking-widest text-kesar-saffron font-bold">Official UPI Payment</span>
+            <h3 class="font-serif text-3xl font-bold text-kesar-crimson">Scan &amp; Pay via UPI</h3>
+            <p class="text-xs text-stone-500">Google Pay • PhonePe • Paytm • BHIM • Cred • Any Banking App</p>
+          </div>
+
+          <!-- QR Code Display Card -->
+          <div class="relative max-w-[280px] mx-auto rounded-2xl overflow-hidden border-2 border-stone-200 bg-white p-3 shadow-md">
+            <img src="assets/qr.png" alt="Sandeep Tikoo UPI QR Code" class="w-full h-auto block rounded-xl">
+          </div>
+
+          <!-- Total to Pay Badge -->
+          <div class="bg-kesar-cream border border-kesar-gold/40 rounded-2xl p-4 space-y-1">
+            <span class="text-xs text-stone-600 block uppercase font-medium">Exact Amount to Pay:</span>
+            <div id="qr-amount-display" class="font-serif text-3xl sm:text-4xl font-bold text-kesar-crimson">₹ 0</div>
+          </div>
+
+          <!-- UPI ID Copy Section -->
+          <div class="space-y-2">
+            <span class="text-[11px] font-semibold text-stone-500 uppercase tracking-wider block">Or transfer directly to UPI ID:</span>
+            <div class="flex items-center justify-between gap-2 p-3 bg-stone-50 rounded-xl border border-stone-200 text-xs">
+              <span class="font-mono font-bold text-stone-800" id="upi-id-text">sandeep.tikoo3@okicici</span>
+              <button onclick="copyUpiId()" id="copy-upi-btn" class="px-3 py-1.5 rounded-lg bg-kesar-sand hover:bg-kesar-gold/30 text-kesar-crimson font-bold text-[11px] transition-all flex items-center gap-1">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                <span id="copy-btn-label">Copy ID</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile Direct App Link -->
+          <div class="sm:hidden pt-1">
+            <a id="mobile-upi-link" href="#" class="w-full py-2.5 px-4 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs flex items-center justify-center gap-2 border border-stone-300">
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+              <span>Pay with Installed UPI App</span>
+            </a>
+          </div>
+
+          <!-- Optional UTR Input -->
+          <div class="pt-2 text-left">
+            <label class="block text-[11px] font-semibold text-stone-600 uppercase tracking-wider mb-1">
+              UPI Ref / UTR / Transaction ID (Optional)
+            </label>
+            <input type="text" id="cust-utr" placeholder="e.g. 428190382910" class="w-full px-3.5 py-2 text-xs rounded-lg border border-stone-200 focus:outline-none focus:border-kesar-gold bg-stone-50/50">
+          </div>
+
+          <!-- Complete & Send Order Confirmation Button -->
+          <div class="pt-2 space-y-2">
+            <button 
+              type="button" 
+              onclick="handleCompleteUpiOrder()" 
+              class="w-full py-4 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm tracking-wide shadow-xl shadow-emerald-700/25 transition-all flex items-center justify-center gap-2">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              <span>Confirm Order &amp; Send on WhatsApp</span>
+            </button>
+            <p class="text-[11px] text-stone-500 italic">
+              Opens WhatsApp directly with Sandeep Tikoo to send your order details &amp; payment confirmation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Trust Note -->
+        <div class="p-4 rounded-2xl bg-kesar-sand/30 border border-kesar-gold/30 text-xs text-stone-700 space-y-1">
+          <div class="font-bold text-kesar-charcoal flex items-center gap-1.5">
+            <i data-lucide="truck" class="w-4 h-4 text-kesar-red"></i>
+            <span>Order Dispatch &amp; Tracking:</span>
+          </div>
+          <p class="leading-relaxed">
+            Once payment is received, your artisanal package will be securely sealed and dispatched with tracking shared on your WhatsApp number.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Brand Banner -->
+  <div class="w-full bg-kesar-sand/40 border-t border-kesar-gold/25 py-8 sm:py-10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl overflow-hidden shadow-lg border-2 border-white bg-white">
+        <img src="assets/footer.png" alt="Kesar Haat: Bazaar-e-Koshur (Marketplace of Kashmir)" class="w-full h-auto object-cover block">
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-kesar-charcoal text-stone-300 pt-16 pb-12 mt-auto border-t border-kesar-gold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-stone-800">
+        <!-- Col 1: Brand -->
+        <div class="space-y-4 md:col-span-2">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-kesar-red text-white font-serif text-xl font-bold flex items-center justify-center border border-kesar-gold">
+              K
+            </div>
+            <div>
+              <span class="font-serif text-2xl font-bold text-white block">KESAR HAAT</span>
+              <span class="text-[11px] uppercase tracking-widest text-kesar-gold">Bazaar-e-Koshur</span>
+            </div>
+          </div>
+          <p class="text-sm text-stone-400 max-w-md leading-relaxed">
+            Preserving what is timeless, celebrating what is Kashmiri, and carrying its legacy forward. Sourced directly from local orchards and family farms in the Valley.
+          </p>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Explore</h4>
+          <ul class="space-y-2 text-sm text-stone-400">
+            <li><a href="index.html" class="hover:text-kesar-gold transition-colors">Home</a></li>
+            <li><a href="catalog.html" class="hover:text-kesar-gold transition-colors">Spices & Dry Fruits</a></li>
+            <li><a href="about.html" class="hover:text-kesar-gold transition-colors">Our Story & Heritage</a></li>
+            <li><a href="cart.html" class="hover:text-kesar-gold transition-colors">Your Cart</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact & Authenticity -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Origins & Contact</h4>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            Orchards: Sopore & Srinagar, Kashmir.<br>
+            Distribution: Lucknow & Pan-India.
+          </p>
+          <div class="pt-2 text-xs text-kesar-gold font-medium">
+            WhatsApp: +91 95861 19191
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+        <p>© 2026 Kesar Haat (Bazaar-e-Koshur). All rights reserved.</p>
+        <p class="italic text-stone-400 font-serif text-sm">“Authentic. Pure. From the Valley to Your Home.”</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/store.js"></script>
+  <script>
+    const UPI_ID = 'sandeep.tikoo3@okicici';
+    const MERCHANT_NAME = 'Sandeep Tikoo';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCheckout();
+      lucide.createIcons();
+    });
+
+    function renderCheckout() {
+      const cart = getCart();
+      const emptyView = document.getElementById('checkout-empty-view');
+      const activeGrid = document.getElementById('checkout-active-grid');
+      const itemsList = document.getElementById('checkout-items-list');
+
+      if (!cart || cart.length === 0) {
+        if (emptyView) emptyView.classList.remove('hidden');
+        if (activeGrid) activeGrid.classList.add('hidden');
+        return;
+      }
+
+      if (emptyView) emptyView.classList.add('hidden');
+      if (activeGrid) activeGrid.classList.remove('hidden');
+
+      const total = getCartTotal();
+
+      itemsList.innerHTML = cart.map(item => `
+        <div class="py-3 flex items-center justify-between text-xs sm:text-sm">
+          <div class="flex items-center gap-3">
+            <img src="${item.image}" alt="${item.name}" class="w-12 h-12 rounded-lg object-cover border border-stone-200">
+            <div>
+              <strong class="text-stone-800 font-semibold block">${item.name}</strong>
+              <span class="text-xs text-stone-500">${item.packSize} • Qty: ${item.quantity}</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <span class="font-bold text-stone-900">${formatCurrency(item.unitPrice * item.quantity)}</span>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('checkout-total-payable').textContent = formatCurrency(total);
+      document.getElementById('qr-amount-display').textContent = formatCurrency(total);
+
+      // Deep link for mobile UPI apps
+      const upiDeepLink = `upi://pay?pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(MERCHANT_NAME)}&am=${total}&cu=INR&tn=${encodeURIComponent('Kesar Haat Order')}`;
+      const mobileLinkEl = document.getElementById('mobile-upi-link');
+      if (mobileLinkEl) {
+        mobileLinkEl.href = upiDeepLink;
+      }
+    }
+
+    function copyUpiId() {
+      navigator.clipboard.writeText(UPI_ID).then(() => {
+        const label = document.getElementById('copy-btn-label');
+        if (label) {
+          label.textContent = 'Copied!';
+          setTimeout(() => label.textContent = 'Copy ID', 2000);
+        }
+        showToast('UPI ID copied: ' + UPI_ID);
+      }).catch(err => {
+        showToast('UPI ID: ' + UPI_ID, 'info');
+      });
+    }
+
+    function handleCompleteUpiOrder() {
+      const name = document.getElementById('cust-name').value.trim();
+      const phone = document.getElementById('cust-phone').value.trim();
+      const city = document.getElementById('cust-city').value.trim();
+      const address = document.getElementById('cust-address').value.trim();
+      const utr = document.getElementById('cust-utr').value.trim();
+      const notes = document.getElementById('cust-notes').value.trim();
+
+      if (!name) {
+        alert('Please enter your full name.');
+        document.getElementById('cust-name').focus();
+        return;
+      }
+      if (!phone) {
+        alert('Please enter your phone number.');
+        document.getElementById('cust-phone').focus();
+        return;
+      }
+      if (!address || !city) {
+        alert('Please enter your complete delivery address and city/pincode.');
+        document.getElementById('cust-address').focus();
+        return;
+      }
+
+      const cart = getCart();
+      const total = getCartTotal();
+
+      let text = `*Order & Payment Confirmation: Kesar Haat*\n\n`;
+      text += `*Customer Details:*\n`;
+      text += `• Name: ${name}\n`;
+      text += `• WhatsApp / Phone: ${phone}\n`;
+      text += `• Delivery Address: ${address}\n`;
+      text += `• City / Pincode: ${city}\n`;
+      if (notes) text += `• Special Notes: ${notes}\n`;
+
+      text += `\n*Ordered Items:*\n`;
+      cart.forEach((item, idx) => {
+        text += `${idx + 1}. ${item.name} (${item.packSize}) × ${item.quantity} = ${formatCurrency(item.unitPrice * item.quantity)}\n`;
+      });
+
+      text += `\n*Total Amount:* ${formatCurrency(total)}\n`;
+      text += `*Payment Method:* UPI (${UPI_ID})\n`;
+      if (utr) {
+        text += `*UPI Ref / UTR:* ${utr}\n`;
+      }
+      text += `\nI have completed the payment via UPI. Please find the payment screenshot attached below.`;
+
+      const whatsappUrl = `https://wa.me/${STORE_CONFIG.phone}?text=${encodeURIComponent(text)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+</body>
+</html>
