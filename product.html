@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | Kesar Haat (Bazaar-e-Koshur)</title>
+  <meta name="description" content="Authentic Kashmiri harvest, taste profiles, nutritional benefits, and traditional culinary usage.">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            kesar: {
+              red: '#8B1E1E',
+              crimson: '#6E1414',
+              saffron: '#D35400',
+              gold: '#C59B27',
+              cream: '#FAF7F2',
+              sand: '#F3EBDD',
+              charcoal: '#1F1D1A'
+            }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-kesar-cream text-kesar-charcoal antialiased flex flex-col min-h-screen">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-kesar-crimson text-[#F3EBDD] text-xs font-medium py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2">
+    <span class="text-[#E6CA65]">✦</span>
+    <span>Authentic Kashmiri Harvest • Handpicked & Naturally Sun-Dried • Pan-India Delivery</span>
+    <span class="text-[#E6CA65]">✦</span>
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-full bg-kesar-red flex items-center justify-center text-white font-serif text-2xl font-bold shadow-md border-2 border-kesar-gold/60 group-hover:scale-105 transition-transform">
+          K
+        </div>
+        <div>
+          <span class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-kesar-red block leading-none">KESAR HAAT</span>
+          <span class="text-[11px] uppercase tracking-widest text-kesar-saffron font-semibold block mt-0.5">Bazaar-e-Koshur</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="index.html" class="text-kesar-charcoal/80 hover:text-kesar-red transition-colors">Home</a>
+        <a href="catalog.html" class="text-kesar-red font-semibold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-kesar-red">Catalogue & Spices</a>
+        <a href="about.html" class="text-kesar-charcoal/80 hover:text-kesar-red transition-colors">Our Story & Heritage</a>
+      </nav>
+
+      <!-- Cart Action -->
+      <div class="flex items-center gap-4">
+        <a href="cart.html" class="relative p-2.5 rounded-full bg-kesar-sand/60 hover:bg-kesar-sand text-kesar-crimson transition-colors flex items-center justify-center">
+          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+          <span class="cart-badge hidden absolute -top-1 -right-1 bg-kesar-red text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-kesar-cream shadow-sm">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs & Back Link -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 w-full">
+    <nav class="flex items-center gap-2 text-xs text-stone-500">
+      <a href="index.html" class="hover:text-kesar-red">Home</a>
+      <span>/</span>
+      <a href="catalog.html" class="hover:text-kesar-red">Catalogue</a>
+      <span>/</span>
+      <span class="text-kesar-crimson font-semibold" id="breadcrumb-product-name">Loading...</span>
+    </nav>
+  </div>
+
+  <!-- Product Detail Section -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-grow">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start" id="product-container">
+      
+      <!-- Left: Image Showcase -->
+      <div class="lg:col-span-6 space-y-4">
+        <div class="relative bg-white rounded-3xl overflow-hidden border border-kesar-gold/30 shadow-md">
+          <img id="product-img" src="" alt="Product Image" class="w-full h-auto aspect-square object-cover">
+          <span id="product-category" class="absolute top-4 left-4 bg-kesar-crimson text-white text-xs uppercase font-bold tracking-wider px-3 py-1 rounded-full shadow">
+            Loading...
+          </span>
+        </div>
+        
+        <!-- Trust mini-bar -->
+        <div class="grid grid-cols-3 gap-3 text-center text-xs text-stone-600 bg-white p-4 rounded-2xl border border-kesar-gold/20">
+          <div>
+            <span class="text-kesar-gold font-bold block text-sm">✦ 100%</span>
+            <span>Kashmiri Origin</span>
+          </div>
+          <div>
+            <span class="text-kesar-gold font-bold block text-sm">✦ Pure</span>
+            <span>Sun-Dried / Artisanal</span>
+          </div>
+          <div>
+            <span class="text-kesar-gold font-bold block text-sm">✦ Sealed</span>
+            <span>Aroma-Lock Pouch</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Buying Details -->
+      <div class="lg:col-span-6 space-y-6">
+        <div>
+          <span id="product-alt-name" class="text-sm font-bold uppercase tracking-wider text-kesar-saffron block"></span>
+          <h1 id="product-name" class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-kesar-crimson mt-1"></h1>
+        </div>
+
+        <!-- Taste Profile Badges -->
+        <div class="space-y-1.5" id="taste-profile-section">
+          <span class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Taste & Aroma Profile:</span>
+          <div id="taste-tags" class="flex flex-wrap gap-2 pt-1">
+            <!-- Injected dynamically -->
+          </div>
+        </div>
+
+        <!-- Description -->
+        <p id="product-desc" class="text-stone-700 text-sm sm:text-base leading-relaxed bg-white/60 p-4 rounded-xl border border-kesar-gold/20"></p>
+
+        <!-- Pack Size Switcher -->
+        <div class="space-y-2 pt-2">
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-700">Select Pack Size</label>
+          <div class="grid grid-cols-3 gap-3" id="product-pack-sizes">
+            <!-- Buttons injected dynamically -->
+          </div>
+        </div>
+
+        <!-- Quantity Counter & Live Price -->
+        <div class="flex items-center justify-between pt-4 border-t border-kesar-gold/20">
+          <div>
+            <span class="text-xs text-stone-500 uppercase tracking-wider block font-medium">Calculated Price</span>
+            <span id="product-price-display" class="font-serif text-3xl sm:text-4xl font-bold text-kesar-crimson">₹ 0</span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-semibold text-stone-500">Qty:</span>
+            <div class="flex items-center border border-stone-300 rounded-xl bg-white overflow-hidden shadow-sm">
+              <button onclick="changeQuantity(-1)" class="px-3 py-2 text-stone-600 hover:bg-stone-100 font-bold">-</button>
+              <span id="qty-display" class="px-3 py-2 text-sm font-bold text-kesar-charcoal min-w-[36px] text-center">1</span>
+              <button onclick="changeQuantity(1)" class="px-3 py-2 text-stone-600 hover:bg-stone-100 font-bold">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <button onclick="handleAddCurrentProduct()" class="flex-1 py-4 px-6 rounded-2xl bg-kesar-red hover:bg-kesar-crimson text-white font-bold text-sm tracking-wide shadow-lg shadow-kesar-red/20 transition-all flex items-center justify-center gap-2">
+            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+            <span>Add to Cart</span>
+          </button>
+          
+          <button onclick="handleInstantWhatsAppBuy()" class="py-4 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm tracking-wide shadow-md transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            <span>Order on WhatsApp</span>
+          </button>
+        </div>
+
+        <!-- Catalogue Quote Callout -->
+        <div class="p-4 rounded-xl bg-kesar-sand/40 border-l-4 border-kesar-gold text-xs italic text-stone-700" id="product-quote">
+          <!-- Dynamic quote -->
+        </div>
+
+        <!-- Health Benefits Breakdown -->
+        <div class="space-y-3 pt-4 border-t border-kesar-gold/20">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-stone-700">Health & Nutritional Benefits</h3>
+          <ul class="space-y-2" id="benefits-list">
+            <!-- Dynamic benefits -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <div class="mt-20 pt-12 border-t border-kesar-gold/20">
+      <div class="flex items-center justify-between mb-8">
+        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-kesar-crimson">Explore Other Valley Treasures</h3>
+        <a href="catalog.html" class="text-xs font-semibold text-kesar-red hover:underline">View All Produce →</a>
+      </div>
+      <div id="related-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-kesar-charcoal text-stone-300 pt-16 pb-12 mt-auto border-t border-kesar-gold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-stone-800">
+        <!-- Col 1: Brand -->
+        <div class="space-y-4 md:col-span-2">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-kesar-red text-white font-serif text-xl font-bold flex items-center justify-center border border-kesar-gold">
+              K
+            </div>
+            <div>
+              <span class="font-serif text-2xl font-bold text-white block">KESAR HAAT</span>
+              <span class="text-[11px] uppercase tracking-widest text-kesar-gold">Bazaar-e-Koshur</span>
+            </div>
+          </div>
+          <p class="text-sm text-stone-400 max-w-md leading-relaxed">
+            Preserving what is timeless, celebrating what is Kashmiri, and carrying its legacy forward. Sourced directly from local orchards and family farms in the Valley.
+          </p>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Explore</h4>
+          <ul class="space-y-2 text-sm text-stone-400">
+            <li><a href="index.html" class="hover:text-kesar-gold transition-colors">Home</a></li>
+            <li><a href="catalog.html" class="hover:text-kesar-gold transition-colors">Spices & Dry Fruits</a></li>
+            <li><a href="about.html" class="hover:text-kesar-gold transition-colors">Our Story & Heritage</a></li>
+            <li><a href="cart.html" class="hover:text-kesar-gold transition-colors">Your Cart</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact & Authenticity -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Origins & Contact</h4>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            Orchards: Sopore & Srinagar, Kashmir.<br>
+            Distribution: Lucknow & Pan-India.
+          </p>
+          <div class="pt-2 text-xs text-kesar-gold font-medium">
+            WhatsApp: +91 95861 19191
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+        <p>© 2026 Kesar Haat (Bazaar-e-Koshur). All rights reserved.</p>
+        <p class="italic text-stone-400 font-serif text-sm">“Authentic. Pure. From the Valley to Your Home.”</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/store.js"></script>
+  <script>
+    let currentProduct = null;
+    let selectedPackSize = '250 gm';
+    let currentQuantity = 1;
+
+    // Detailed taste profiles and catalogue lines from about.md
+    const PRODUCT_EXTRA_METADATA = {
+      'kashmiri-kagzi-walnuts': {
+        taste: ['Rich', 'Buttery', 'Mildly Sweet', 'Nutty'],
+        quote: '“A delicate shell holding the rich goodness and timeless heritage of Kashmir.”'
+      },
+      'kashmiri-kagzi-almonds': {
+        taste: ['Delicate', 'Naturally Sweet', 'Creamy', 'Nutty'],
+        quote: '“A delicate shell, a precious kernel—Kashmir’s goodness, naturally.”'
+      },
+      'kashmiri-rajma': {
+        taste: ['Earthy', 'Rich', 'Wholesome', 'Delicate'],
+        quote: '“Authentic Kashmiri Rajma—distinctive texture and rich mountain taste for your hearth.”'
+      },
+      'kashmiri-sauth-masala': {
+        taste: ['Warm', 'Earthy', 'Aromatic', 'Gently Pungent'],
+        quote: '“A pinch of Soth, and the warmth of Kashmir comes alive.”'
+      },
+      'kashmiri-red-chilli-powder': {
+        taste: ['Mild', 'Earthy', 'Aromatic', 'Gently Warm'],
+        quote: '“A touch of Kashmiri Lal Mirch—colour, warmth and the soul of the Valley.”'
+      },
+      'kashmiri-saunf-powder': {
+        taste: ['Sweet', 'Warm', 'Refreshing', 'Aromatic'],
+        quote: '“A little Badyan, and the unmistakable aroma of Kashmir comes alive.”'
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      const data = await fetchMenu();
+      if (!data || !data.products) return;
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id') || 'kashmiri-kagzi-walnuts';
+
+      currentProduct = data.products.find(p => p.id === productId) || data.products[0];
+      selectedPackSize = currentProduct.default_pack_size || '250 gm';
+
+      renderProductDetails(currentProduct);
+      renderRelated(data.products.filter(p => p.id !== currentProduct.id));
+      lucide.createIcons();
+    });
+
+    function renderProductDetails(p) {
+      document.title = `${p.name} | Kesar Haat`;
+      document.getElementById('breadcrumb-product-name').textContent = p.name;
+      document.getElementById('product-img').src = p.image;
+      document.getElementById('product-img').alt = p.name;
+      document.getElementById('product-category').textContent = p.category;
+      document.getElementById('product-alt-name').textContent = p.alternate_name || '';
+      document.getElementById('product-name').textContent = p.name;
+      document.getElementById('product-desc').textContent = p.description;
+
+      const meta = PRODUCT_EXTRA_METADATA[p.id] || { taste: ['Pure', 'Aromatic', 'Authentic'], quote: '“Direct from Kashmir Valley.”' };
+
+      // Taste profile tags
+      document.getElementById('taste-tags').innerHTML = meta.taste.map(t => `
+        <span class="text-xs bg-kesar-cream border border-kesar-gold/40 text-kesar-charcoal px-3 py-1 rounded-full font-medium shadow-sm">
+          ✦ ${t}
+        </span>
+      `).join('');
+
+      // Catalogue quote
+      document.getElementById('product-quote').textContent = meta.quote;
+
+      // Pack size buttons
+      document.getElementById('product-pack-sizes').innerHTML = p.pack_sizes.map(size => `
+        <button 
+          type="button" 
+          onclick="selectPackSize('${size}')" 
+          class="pack-option-btn py-2.5 px-3 text-xs font-bold rounded-xl border transition-all text-center ${size === selectedPackSize ? 'bg-kesar-red text-white border-kesar-red shadow-sm' : 'bg-white text-stone-700 border-stone-200 hover:border-kesar-gold'}"
+          data-size="${size}">
+          ${size}
+        </button>
+      `).join('');
+
+      // Benefits list
+      document.getElementById('benefits-list').innerHTML = p.benefits.map(b => `
+        <li class="flex items-center gap-2 text-xs text-stone-700">
+          <i data-lucide="check-circle-2" class="w-4 h-4 text-kesar-gold flex-shrink-0"></i>
+          <span class="font-medium">${b}</span>
+        </li>
+      `).join('');
+
+      updatePrice();
+    }
+
+    function selectPackSize(size) {
+      selectedPackSize = size;
+      document.querySelectorAll('.pack-option-btn').forEach(btn => {
+        if (btn.getAttribute('data-size') === size) {
+          btn.classList.add('bg-kesar-red', 'text-white', 'border-kesar-red', 'shadow-sm');
+          btn.classList.remove('bg-white', 'text-stone-700', 'border-stone-200');
+        } else {
+          btn.classList.remove('bg-kesar-red', 'text-white', 'border-kesar-red', 'shadow-sm');
+          btn.classList.add('bg-white', 'text-stone-700', 'border-stone-200');
+        }
+      });
+      updatePrice();
+    }
+
+    function changeQuantity(delta) {
+      currentQuantity = Math.max(1, currentQuantity + delta);
+      document.getElementById('qty-display').textContent = currentQuantity;
+      updatePrice();
+    }
+
+    function updatePrice() {
+      if (!currentProduct) return;
+      const unitPrice = calculateItemPrice(currentProduct.price, selectedPackSize);
+      const total = unitPrice * currentQuantity;
+      document.getElementById('product-price-display').textContent = formatCurrency(total);
+    }
+
+    function handleAddCurrentProduct() {
+      if (!currentProduct) return;
+      addToCart(currentProduct, selectedPackSize, currentQuantity);
+    }
+
+    function handleInstantWhatsAppBuy() {
+      if (!currentProduct) return;
+      const unitPrice = calculateItemPrice(currentProduct.price, selectedPackSize);
+      const total = unitPrice * currentQuantity;
+      const text = `Namaste Kesar Haat! I would like to order:\n\n• *${currentProduct.name}* (${selectedPackSize})\n• Quantity: ${currentQuantity}\n• Total Amount: ${formatCurrency(total)}\n\nPlease provide payment and delivery confirmation.`;
+      window.open(`https://wa.me/${STORE_CONFIG.phone}?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    function renderRelated(products) {
+      const grid = document.getElementById('related-grid');
+      if (!grid) return;
+      const subset = products.slice(0, 3);
+      grid.innerHTML = subset.map(p => `
+        <a href="product.html?id=${p.id}" class="bg-white rounded-2xl border border-kesar-gold/25 p-4 flex items-center gap-4 card-hover-lift">
+          <img src="${p.image}" alt="${p.name}" class="w-16 h-16 rounded-xl object-cover">
+          <div>
+            <span class="text-[10px] text-kesar-saffron font-bold block uppercase">${p.category}</span>
+            <h4 class="font-serif text-base font-bold text-kesar-charcoal leading-snug">${p.name}</h4>
+            <span class="text-xs font-bold text-kesar-crimson mt-0.5 block">${p.formatted_price}</span>
+          </div>
+        </a>
+      `).join('');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kesar Haat — Bazaar-e-Koshur | Marketplace of Kashmir</title>
+  <meta name="description" content="Authentic Kashmiri spices, walnuts, almonds, and dry fruits directly from the orchards and valley of Kashmir. Pure goodness for your family.">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            kesar: {
+              red: '#8B1E1E',
+              crimson: '#6E1414',
+              saffron: '#D35400',
+              gold: '#C59B27',
+              cream: '#FAF7F2',
+              sand: '#F3EBDD',
+              charcoal: '#1F1D1A'
+            }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-kesar-cream text-kesar-charcoal antialiased flex flex-col min-h-screen">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-kesar-crimson text-[#F3EBDD] text-xs font-medium py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2">
+    <span class="text-[#E6CA65]">✦</span>
+    <span>Authentic. Pure. Directly from the Valley of Kashmir to your doorstep across India.</span>
+    <span class="text-[#E6CA65]">✦</span>
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-full bg-kesar-red flex items-center justify-center text-white font-serif text-2xl font-bold shadow-md border-2 border-kesar-gold/60 group-hover:scale-105 transition-transform">
+          K
+        </div>
+        <div>
+          <span class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-kesar-red block leading-none">KESAR HAAT</span>
+          <span class="text-[11px] uppercase tracking-widest text-kesar-saffron font-semibold block mt-0.5">Bazaar-e-Koshur</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="index.html" class="text-kesar-red font-semibold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-kesar-red">Home</a>
+        <a href="catalog.html" class="text-kesar-charcoal/80 hover:text-kesar-red transition-colors">Catalogue & Spices</a>
+        <a href="about.html" class="text-kesar-charcoal/80 hover:text-kesar-red transition-colors">Our Story & Heritage</a>
+      </nav>
+
+      <!-- Cart & Mobile Actions -->
+      <div class="flex items-center gap-4">
+        <a href="cart.html" class="relative p-2.5 rounded-full bg-kesar-sand/60 hover:bg-kesar-sand text-kesar-crimson transition-colors flex items-center justify-center">
+          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+          <span class="cart-badge hidden absolute -top-1 -right-1 bg-kesar-red text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-kesar-cream shadow-sm">0</span>
+        </a>
+        <a href="catalog.html" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-kesar-red hover:bg-kesar-crimson rounded-lg shadow-sm hover:shadow transition-all">
+          Explore Menu
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden pt-8 pb-16 lg:py-20 bg-gradient-to-b from-kesar-sand/40 to-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-kesar-red/10 border border-kesar-red/20 text-kesar-red text-xs font-semibold tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-kesar-red animate-pulse"></span>
+            Heritage Harvest • 100% Valley Sourced
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-kesar-crimson tracking-tight leading-[1.1]">
+            Bringing the Soul & Flavours of Kashmir <span class="italic font-normal text-kesar-saffron">to Your Kitchen.</span>
+          </h1>
+
+          <p class="text-kesar-charcoal/80 text-base sm:text-lg max-w-2xl leading-relaxed">
+            From the sun-kissed walnut orchards of Sopore to traditional spice hearths of Srinagar. Genuine thin-shelled Kagzi walnuts, fragrant Badyan, authentic Sauth, and aromatic handcrafted Ver Masala.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="catalog.html" class="px-7 py-3.5 rounded-xl bg-kesar-red hover:bg-kesar-crimson text-white font-medium shadow-lg shadow-kesar-red/20 hover:shadow-xl transition-all flex items-center gap-2">
+              <span>View Product Catalogue</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="about.html" class="px-7 py-3.5 rounded-xl bg-white border border-kesar-gold/50 hover:border-kesar-gold text-kesar-charcoal font-medium hover:bg-kesar-sand/30 shadow-sm transition-all flex items-center gap-2">
+              <i data-lucide="book-open" class="w-4 h-4 text-kesar-saffron"></i>
+              <span>Our Family Legacy</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges Summary -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-kesar-gold/20 text-xs">
+            <div class="flex items-center gap-2">
+              <i data-lucide="leaf" class="w-4 h-4 text-emerald-700"></i>
+              <span class="font-semibold text-kesar-charcoal/90">Naturally Sourced</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="mountain" class="w-4 h-4 text-kesar-red"></i>
+              <span class="font-semibold text-kesar-charcoal/90">Kashmiri Produce</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-4 h-4 text-kesar-gold"></i>
+              <span class="font-semibold text-kesar-charcoal/90">Tradition & Trust</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="heart" class="w-4 h-4 text-rose-600"></i>
+              <span class="font-semibold text-kesar-charcoal/90">Pure Family Care</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <div class="absolute -inset-2 bg-gradient-to-r from-kesar-gold/30 to-kesar-red/30 rounded-3xl blur-xl opacity-70"></div>
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+              <img src="assets/banner.jpeg" alt="Kesar Haat - Bazaar-e-Koshur Kashmiri Produce" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6 text-white">
+                <div>
+                  <span class="text-xs uppercase tracking-widest text-[#E6CA65] font-semibold">Bazaar-e-Koshur</span>
+                  <h3 class="font-serif text-2xl font-bold">The Marketplace of Kashmir</h3>
+                  <p class="text-xs text-white/80 mt-1">Authentic thin-shell walnuts, almonds & heirloom ground spices.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="py-16 bg-white border-y border-kesar-gold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between mb-12">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-kesar-saffron font-bold">Heirloom Harvest</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-kesar-crimson mt-1">Featured Kashmiri Treasures</h2>
+        </div>
+        <a href="catalog.html" class="mt-4 sm:mt-0 text-sm font-semibold text-kesar-red hover:text-kesar-crimson flex items-center gap-1 group">
+          <span>View All 6 Items</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+        </a>
+      </div>
+
+      <!-- Featured Cards Container -->
+      <div id="featured-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Rendered dynamically by store.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Story Teaser Section -->
+  <section class="py-20 bg-kesar-cream relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-br from-white to-kesar-sand/40 border border-kesar-gold/30 rounded-3xl p-8 sm:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5 rounded-2xl overflow-hidden shadow-md border-2 border-white">
+          <img src="assets/cover.jpeg" alt="Kashmiri Culinary Legacy" class="w-full h-auto object-cover">
+        </div>
+        <div class="lg:col-span-7 space-y-5">
+          <span class="text-xs uppercase tracking-widest text-kesar-saffron font-bold">Generations of Flavor</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-kesar-crimson leading-tight">
+            “Our connection with Kashmir is not a business idea. It is our inheritance.”
+          </h2>
+          <p class="text-kesar-charcoal/80 text-sm sm:text-base leading-relaxed">
+            From our ancestral 19th-century home in Shalakadal, Srinagar to the orchards of Zolur, Sopore. For founder Sandeep Tikoo, Kesar Haat is a return to his roots—preserving authentic aromas, hand-ground spices, and recipes that define the warmth of a Kashmiri home.
+          </p>
+          <div class="pt-2">
+            <a href="about.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-kesar-red hover:bg-kesar-crimson text-white text-sm font-semibold shadow-md transition-all">
+              <span>Read The Full Heritage Journey</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp Quick Order Banner -->
+  <section class="py-12 bg-emerald-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-1 text-center md:text-left">
+        <div class="inline-flex items-center gap-2 text-emerald-300 text-xs font-semibold uppercase tracking-wider">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          Direct WhatsApp Ordering
+        </div>
+        <h3 class="font-serif text-2xl sm:text-3xl font-bold">Prefer ordering directly on WhatsApp?</h3>
+        <p class="text-emerald-100/80 text-sm">Add items to your cart or message us directly with your custom quantity.</p>
+      </div>
+      <a href="https://wa.me/919586119191?text=Namaste%20Kesar%20Haat!%20I%20would%20like%20to%20inquire%20about%20your%20Kashmiri%20produce%20and%20spices." target="_blank" class="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold shadow-lg flex items-center gap-2 whitespace-nowrap transition-all">
+        <i data-lucide="message-circle" class="w-5 h-5"></i>
+        <span>Chat with Us on WhatsApp</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-kesar-charcoal text-stone-300 pt-16 pb-12 mt-auto border-t border-kesar-gold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-stone-800">
+        <!-- Col 1: Brand -->
+        <div class="space-y-4 md:col-span-2">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-kesar-red text-white font-serif text-xl font-bold flex items-center justify-center border border-kesar-gold">
+              K
+            </div>
+            <div>
+              <span class="font-serif text-2xl font-bold text-white block">KESAR HAAT</span>
+              <span class="text-[11px] uppercase tracking-widest text-kesar-gold">Bazaar-e-Koshur</span>
+            </div>
+          </div>
+          <p class="text-sm text-stone-400 max-w-md leading-relaxed">
+            Preserving what is timeless, celebrating what is Kashmiri, and carrying its legacy forward. Sourced directly from local orchards and family farms in the Valley.
+          </p>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Explore</h4>
+          <ul class="space-y-2 text-sm text-stone-400">
+            <li><a href="index.html" class="hover:text-kesar-gold transition-colors">Home</a></li>
+            <li><a href="catalog.html" class="hover:text-kesar-gold transition-colors">Spices & Dry Fruits</a></li>
+            <li><a href="about.html" class="hover:text-kesar-gold transition-colors">Our Story & Heritage</a></li>
+            <li><a href="cart.html" class="hover:text-kesar-gold transition-colors">Your Cart</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact & Authenticity -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Origins & Contact</h4>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            Orchards: Sopore & Srinagar, Kashmir.<br>
+            Distribution: Lucknow & Pan-India.
+          </p>
+          <div class="pt-2 text-xs text-kesar-gold font-medium">
+            WhatsApp: +91 95861 19191
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+        <p>© 2026 Kesar Haat (Bazaar-e-Koshur). All rights reserved.</p>
+        <p class="italic text-stone-400 font-serif text-sm">“Authentic. Pure. From the Valley to Your Home.”</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/store.js"></script>
+  <script>
+    lucide.createIcons();
+
+    // Load Featured items on index page
+    document.addEventListener('DOMContentLoaded', async () => {
+      const data = await fetchMenu();
+      const grid = document.getElementById('featured-grid');
+      if (!grid || !data || !data.products) return;
+
+      // Pick 3 signature items for feature
+      const featured = data.products.slice(0, 3);
+      grid.innerHTML = featured.map(p => `
+        <div class="bg-kesar-cream border border-kesar-gold/30 rounded-2xl overflow-hidden card-hover-lift flex flex-col justify-between">
+          <div>
+            <div class="relative h-64 overflow-hidden bg-stone-100">
+              <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 bg-kesar-crimson text-[#FAF7F2] text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full shadow-sm">
+                ${p.category}
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="text-xs font-semibold text-kesar-saffron">${p.alternate_name || ''}</div>
+              <h3 class="font-serif text-xl font-bold text-kesar-charcoal mt-1 hover:text-kesar-red transition-colors">
+                <a href="product.html?id=${p.id}">${p.name}</a>
+              </h3>
+              <p class="text-xs text-stone-600 mt-2 line-clamp-2 leading-relaxed">${p.description}</p>
+              
+              <!-- Benefits -->
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                ${p.benefits.slice(0, 2).map(b => `
+                  <span class="text-[10px] bg-white border border-kesar-gold/30 text-kesar-charcoal px-2 py-0.5 rounded-md font-medium">
+                    ✦ ${b}
+                  </span>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0 border-t border-kesar-gold/15 mt-4 flex items-center justify-between">
+            <div>
+              <span class="text-[11px] text-stone-500 block">Base Price</span>
+              <span class="font-serif text-xl font-bold text-kesar-crimson">${p.formatted_price}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <a href="product.html?id=${p.id}" class="p-2.5 rounded-lg border border-kesar-gold/50 hover:bg-white text-kesar-charcoal text-xs font-medium transition-colors" title="View Details">
+                <i data-lucide="eye" class="w-4 h-4"></i>
+              </a>
+              <button onclick="addToCart(cachedMenu.products.find(x => x.id === '${p.id}'), '250 gm', 1)" class="px-3.5 py-2.5 rounded-lg bg-kesar-red hover:bg-kesar-crimson text-white text-xs font-semibold transition-all flex items-center gap-1.5 shadow-sm">
+                <i data-lucide="plus" class="w-4 h-4"></i>
+                <span>Add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

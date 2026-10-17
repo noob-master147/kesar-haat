@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Heritage & Story | Kesar Haat (Bazaar-e-Koshur)</title>
+  <meta name="description" content="The story of Kesar Haat: Durganath Tikoo of Srinagar, Asha Pandita Tikoo of Sopore, and founder Sandeep Tikoo's journey back to Kashmiri roots.">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            kesar: {
+              red: '#8B1E1E',
+              crimson: '#6E1414',
+              saffron: '#D35400',
+              gold: '#C59B27',
+              cream: '#FAF7F2',
+              sand: '#F3EBDD',
+              charcoal: '#1F1D1A'
+            }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-kesar-cream text-kesar-charcoal antialiased flex flex-col min-h-screen">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-kesar-crimson text-[#F3EBDD] text-xs font-medium py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2">
+    <span class="text-[#E6CA65]">✦</span>
+    <span>A Multi-Generational Kashmiri Legacy • Preserving Timeless Heritage & Flavours</span>
+    <span class="text-[#E6CA65]">✦</span>
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-full bg-kesar-red flex items-center justify-center text-white font-serif text-2xl font-bold shadow-md border-2 border-kesar-gold/60 group-hover:scale-105 transition-transform">
+          K
+        </div>
+        <div>
+          <span class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-kesar-red block leading-none">KESAR HAAT</span>
+          <span class="text-[11px] uppercase tracking-widest text-kesar-saffron font-semibold block mt-0.5">Bazaar-e-Koshur</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="index.html" class="text-kesar-charcoal/80 hover:text-kesar-red transition-colors">Home</a>
+        <a href="catalog.html" class="text-kesar-charcoal/80 hover:text-kesar-red transition-colors">Catalogue & Spices</a>
+        <a href="about.html" class="text-kesar-red font-semibold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-kesar-red">Our Story & Heritage</a>
+      </nav>
+
+      <!-- Cart Action -->
+      <div class="flex items-center gap-4">
+        <a href="cart.html" class="relative p-2.5 rounded-full bg-kesar-sand/60 hover:bg-kesar-sand text-kesar-crimson transition-colors flex items-center justify-center">
+          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+          <span class="cart-badge hidden absolute -top-1 -right-1 bg-kesar-red text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-kesar-cream shadow-sm">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Editorial Hero Section -->
+  <section class="py-16 lg:py-20 bg-gradient-to-b from-kesar-sand/40 to-transparent border-b border-kesar-gold/20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <span class="text-xs uppercase tracking-widest text-kesar-saffron font-bold">Foreword</span>
+      <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-kesar-crimson leading-tight">
+        Bringing Kashmir to You
+      </h1>
+      
+      <div class="p-8 rounded-2xl bg-white/80 border border-kesar-gold/30 shadow-sm space-y-4 text-left sm:text-center">
+        <p class="font-serif text-xl sm:text-2xl text-kesar-charcoal leading-relaxed italic">
+          “More than commodities, we bring you the soul of Kashmir.”
+        </p>
+        <p class="text-stone-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+          Its age-old flavours, treasured traditions, authentic craftsmanship and rich cultural heritage—carefully sourced from the valleys of Kashmir and brought to homes beyond its mountains.
+        </p>
+        <div class="pt-2 text-xs uppercase tracking-widest text-kesar-crimson font-bold">
+          Our endeavour: Preserve what is timeless, celebrate what is Kashmiri, and carry its legacy forward.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Narrative Section -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16 flex-grow">
+    
+    <!-- Chapter 1: Our Story -->
+    <article class="space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-px bg-kesar-gold"></span>
+        <span class="text-xs uppercase tracking-widest text-kesar-saffron font-bold">Chapter I</span>
+      </div>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-kesar-crimson">Our Story & Inheritance</h2>
+
+      <div class="text-stone-700 space-y-4 text-base sm:text-lg leading-relaxed font-sans">
+        <p class="font-serif text-xl font-semibold text-kesar-crimson">
+          Our connection with Kashmir is not a business idea. It is our inheritance.
+        </p>
+        
+        <p>
+          My father, <strong>Durganath Tikoo</strong>, grew up in Shalakadal, Habbakadal, Srinagar, in the family home built by my grandfather in the early 19th century. Like many Kashmiri Pandit families, our family had a long tradition of serving in Government.
+        </p>
+        
+        <p>
+          My mother, <strong>Late Asha Pandita Tikoo</strong>, grew up in Zolur village, Sopore, the daughter of a farmer. She brought with her something truly special—a natural, almost God-gifted understanding of food, spices, fruits and dry fruits.
+        </p>
+      </div>
+
+      <!-- Feature Image -->
+      <div class="rounded-3xl overflow-hidden border-4 border-white shadow-xl my-8">
+        <img src="assets/cover.jpeg" alt="Kashmiri Culinary Heritage" class="w-full h-auto object-cover">
+      </div>
+
+      <div class="text-stone-700 space-y-4 text-base sm:text-lg leading-relaxed">
+        <p>
+          Because of my father's postings, our family moved across different parts of India, eventually making Lucknow our home. Yet, wherever we lived, <em>Kashmir travelled with us</em>.
+        </p>
+        
+        <p>
+          While the world around us embraced new cuisines and changing tastes, our home remained anchored in the traditions we had inherited. The food, the aromas, the recipes and the rituals of Kashmir remained unchanged.
+        </p>
+        
+        <p>
+          And at the heart of it all was my mother's kitchen—where generations-old Kashmiri flavours came alive through her extraordinary culinary skills. Her food and lavish Kashmiri spreads became a cherished part of our family identity.
+        </p>
+      </div>
+
+      <!-- Quote Callout -->
+      <div class="my-8 p-6 rounded-2xl bg-kesar-sand/60 border-l-4 border-kesar-red text-kesar-crimson space-y-1">
+        <p class="font-serif text-xl sm:text-2xl font-bold italic">
+          “Because some legacies are not meant to be forgotten. They are meant to be carried forward.”
+        </p>
+      </div>
+    </article>
+
+    <!-- Chapter 2: A Return to My Roots -->
+    <article class="space-y-6 pt-8 border-t border-kesar-gold/20">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-px bg-kesar-gold"></span>
+        <span class="text-xs uppercase tracking-widest text-kesar-saffron font-bold">Chapter II</span>
+      </div>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-kesar-crimson">A Return to My Roots</h2>
+
+      <div class="text-stone-700 space-y-4 text-base sm:text-lg leading-relaxed">
+        <p>
+          For nearly 30 years, I lived the corporate life, crisscrossing India and working overseas. Yet, through it all, Kashmir remained close to my heart.
+        </p>
+
+        <p>
+          My love for cooking began in college. It runs in our family—and I was always drawn to the kitchen, experimenting with flavours, participating in culinary fests and, most importantly, staying connected to my <em>Matamaal</em> (<em>Nanihaal</em>) and the traditions I grew up with.
+        </p>
+
+        <p>
+          Over time, I realised that many of those authentic Kashmiri aromas, ingredients and traditions were slowly fading from everyday life.
+        </p>
+
+        <p class="font-medium text-kesar-charcoal">
+          That became the inspiration for <strong>Kesar Haat</strong> (Kashmir Commodities).
+        </p>
+
+        <p>
+          My second innings is therefore more than a business. It is a return to my roots—with a promise to preserve what we inherited and bring the authentic flavours of Kashmir to homes everywhere.
+        </p>
+      </div>
+
+      <!-- Founder Signature Card -->
+      <div class="mt-8 p-6 sm:p-8 rounded-2xl bg-white border border-kesar-gold/30 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-kesar-saffron font-bold block">Founder & Custodian</span>
+          <h3 class="font-serif text-2xl font-bold text-kesar-crimson mt-0.5">Sandeep Tikoo</h3>
+          <p class="text-xs text-stone-500 mt-1 italic font-serif text-base">“Bringing the Valley to your kitchen.”</p>
+        </div>
+        <a href="catalog.html" class="px-6 py-3 rounded-xl bg-kesar-red hover:bg-kesar-crimson text-white text-xs font-bold uppercase tracking-wider shadow-md transition-all flex items-center gap-2">
+          <span>Taste Our Heritage</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </article>
+
+    <!-- Visual Poster Reference -->
+    <div class="rounded-3xl overflow-hidden border border-kesar-gold/30 shadow-md">
+      <img src="assets/banner1.jpeg" alt="Marketplace of Kashmir Banner" class="w-full h-auto object-cover">
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-kesar-charcoal text-stone-300 pt-16 pb-12 mt-auto border-t border-kesar-gold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-stone-800">
+        <!-- Col 1: Brand -->
+        <div class="space-y-4 md:col-span-2">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-kesar-red text-white font-serif text-xl font-bold flex items-center justify-center border border-kesar-gold">
+              K
+            </div>
+            <div>
+              <span class="font-serif text-2xl font-bold text-white block">KESAR HAAT</span>
+              <span class="text-[11px] uppercase tracking-widest text-kesar-gold">Bazaar-e-Koshur</span>
+            </div>
+          </div>
+          <p class="text-sm text-stone-400 max-w-md leading-relaxed">
+            Preserving what is timeless, celebrating what is Kashmiri, and carrying its legacy forward. Sourced directly from local orchards and family farms in the Valley.
+          </p>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Explore</h4>
+          <ul class="space-y-2 text-sm text-stone-400">
+            <li><a href="index.html" class="hover:text-kesar-gold transition-colors">Home</a></li>
+            <li><a href="catalog.html" class="hover:text-kesar-gold transition-colors">Spices & Dry Fruits</a></li>
+            <li><a href="about.html" class="hover:text-kesar-gold transition-colors">Our Story & Heritage</a></li>
+            <li><a href="cart.html" class="hover:text-kesar-gold transition-colors">Your Cart</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact & Authenticity -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Origins & Contact</h4>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            Orchards: Sopore & Srinagar, Kashmir.<br>
+            Distribution: Lucknow & Pan-India.
+          </p>
+          <div class="pt-2 text-xs text-kesar-gold font-medium">
+            WhatsApp: +91 95861 19191
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+        <p>© 2026 Kesar Haat (Bazaar-e-Koshur). All rights reserved.</p>
+        <p class="italic text-stone-400 font-serif text-sm">“Authentic. Pure. From the Valley to Your Home.”</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/store.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

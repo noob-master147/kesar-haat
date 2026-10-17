@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Basket & Order | Kesar Haat (Bazaar-e-Koshur)</title>
+  <meta name="description" content="Review your authentic Kashmiri produce cart and order directly with instant WhatsApp confirmation.">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            kesar: {
+              red: '#8B1E1E',
+              crimson: '#6E1414',
+              saffron: '#D35400',
+              gold: '#C59B27',
+              cream: '#FAF7F2',
+              sand: '#F3EBDD',
+              charcoal: '#1F1D1A'
+            }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-kesar-cream text-kesar-charcoal antialiased flex flex-col min-h-screen">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-kesar-crimson text-[#F3EBDD] text-xs font-medium py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2">
+    <span class="text-[#E6CA65]">✦</span>
+    <span>Authentic Kashmiri Harvest • Safe Express Courier Across India • Direct UPI / COD Available</span>
+    <span class="text-[#E6CA65]">✦</span>
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-full bg-kesar-red flex items-center justify-center text-white font-serif text-2xl font-bold shadow-md border-2 border-kesar-gold/60 group-hover:scale-105 transition-transform">
+          K
+        </div>
+        <div>
+          <span class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-kesar-red block leading-none">KESAR HAAT</span>
+          <span class="text-[11px] uppercase tracking-widest text-kesar-saffron font-semibold block mt-0.5">Bazaar-e-Koshur</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="index.html" class="text-kesar-charcoal/80 hover:text-kesar-red transition-colors">Home</a>
+        <a href="catalog.html" class="text-kesar-charcoal/80 hover:text-kesar-red transition-colors">Catalogue & Spices</a>
+        <a href="about.html" class="text-kesar-charcoal/80 hover:text-kesar-red transition-colors">Our Story & Heritage</a>
+      </nav>
+
+      <!-- Cart Action -->
+      <div class="flex items-center gap-4">
+        <a href="catalog.html" class="text-xs font-semibold text-kesar-crimson hover:underline flex items-center gap-1">
+          <span>Continue Shopping</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4 w-full">
+    <h1 class="font-serif text-3xl sm:text-4xl font-bold text-kesar-crimson">Your Shopping Basket</h1>
+    <p class="text-xs sm:text-sm text-stone-500 mt-1">Review your selected Kashmiri produce and complete your order.</p>
+  </section>
+
+  <!-- Main Cart Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full flex-grow">
+    <div id="cart-content-wrapper" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left: Items List -->
+      <div class="lg:col-span-7 space-y-4">
+        <div class="bg-white rounded-2xl border border-kesar-gold/25 p-6 shadow-sm">
+          <div class="flex items-center justify-between pb-4 border-b border-stone-100">
+            <span class="text-xs font-bold uppercase tracking-wider text-stone-600">Selected Items (<span id="cart-item-count">0</span>)</span>
+            <button onclick="handleClearCart()" class="text-xs text-rose-600 hover:underline font-semibold flex items-center gap-1">
+              <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+              <span>Clear Basket</span>
+            </button>
+          </div>
+
+          <!-- Items Container -->
+          <div id="cart-items-list" class="divide-y divide-stone-100">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Trust Info Box -->
+        <div class="p-4 rounded-xl bg-kesar-sand/40 border border-kesar-gold/30 text-xs text-stone-700 flex items-start gap-3">
+          <i data-lucide="shield-check" class="w-5 h-5 text-kesar-gold flex-shrink-0 mt-0.5"></i>
+          <div>
+            <span class="font-bold text-kesar-charcoal block">Artisanal Quality Guarantee</span>
+            <span>All spices and dry fruits are freshly packaged in airtight, moisture-proof pouches to preserve the natural oils and aroma of Kashmir.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Summary & WhatsApp Checkout -->
+      <div class="lg:col-span-5 space-y-6">
+        <div class="bg-white rounded-2xl border border-kesar-gold/30 p-6 shadow-sm space-y-5">
+          <h2 class="font-serif text-2xl font-bold text-kesar-crimson pb-3 border-b border-stone-100">Order Summary</h2>
+
+          <div class="space-y-3 text-sm">
+            <div class="flex items-center justify-between text-stone-600">
+              <span>Items Subtotal</span>
+              <span id="summary-subtotal" class="font-semibold text-stone-900">₹ 0</span>
+            </div>
+            <div class="flex items-center justify-between text-stone-600">
+              <span>Standard Delivery (Pan-India)</span>
+              <span class="text-emerald-700 font-semibold">Free on Orders ₹1,999+</span>
+            </div>
+            <div class="pt-3 border-t border-stone-100 flex items-center justify-between text-base">
+              <span class="font-bold text-kesar-charcoal">Estimated Total</span>
+              <span id="summary-total" class="font-serif text-2xl font-bold text-kesar-crimson">₹ 0</span>
+            </div>
+          </div>
+
+          <!-- Direct WhatsApp Order Form -->
+          <div class="pt-4 border-t border-stone-100 space-y-4">
+            <div class="flex items-center gap-2 text-xs font-bold text-emerald-800 bg-emerald-50 p-2.5 rounded-lg border border-emerald-200">
+              <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
+              <span>Instant WhatsApp Checkout</span>
+            </div>
+            <p class="text-xs text-stone-500 leading-relaxed">
+              Fill in your details below to instantly generate a pre-formatted WhatsApp order message sent directly to Sandeep Tikoo (Kesar Haat).
+            </p>
+
+            <form id="checkout-form" onsubmit="event.preventDefault(); submitWhatsAppOrder();" class="space-y-3">
+              <div>
+                <label class="block text-[11px] font-semibold text-stone-600 uppercase tracking-wider mb-1">Your Full Name *</label>
+                <input type="text" id="cust-name" required placeholder="e.g. Ramesh Koul" class="w-full px-3.5 py-2 text-xs rounded-lg border border-stone-200 focus:outline-none focus:border-kesar-gold bg-stone-50/50">
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-[11px] font-semibold text-stone-600 uppercase tracking-wider mb-1">WhatsApp / Phone *</label>
+                  <input type="tel" id="cust-phone" required placeholder="10-digit number" class="w-full px-3.5 py-2 text-xs rounded-lg border border-stone-200 focus:outline-none focus:border-kesar-gold bg-stone-50/50">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-semibold text-stone-600 uppercase tracking-wider mb-1">City / Pincode</label>
+                  <input type="text" id="cust-city" placeholder="e.g. Lucknow 226010" class="w-full px-3.5 py-2 text-xs rounded-lg border border-stone-200 focus:outline-none focus:border-kesar-gold bg-stone-50/50">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-semibold text-stone-600 uppercase tracking-wider mb-1">Delivery Address</label>
+                <textarea id="cust-address" rows="2" placeholder="House/Flat No, Landmark, Street" class="w-full px-3.5 py-2 text-xs rounded-lg border border-stone-200 focus:outline-none focus:border-kesar-gold bg-stone-50/50"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-emerald-700/20 transition-all flex items-center justify-center gap-2">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Complete Order via WhatsApp</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty Cart View -->
+    <div id="empty-cart-view" class="hidden max-w-md mx-auto py-20 text-center space-y-4">
+      <div class="w-20 h-20 mx-auto rounded-full bg-kesar-sand/60 text-kesar-crimson flex items-center justify-center text-3xl font-serif">
+        <i data-lucide="shopping-bag" class="w-8 h-8"></i>
+      </div>
+      <h2 class="font-serif text-3xl font-bold text-kesar-charcoal">Your basket is currently empty</h2>
+      <p class="text-sm text-stone-500">Discover our authentic Kashmiri Kagzi walnuts, almonds, and heirloom spices from the Valley.</p>
+      <a href="catalog.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-kesar-red text-white text-xs font-bold uppercase tracking-wider shadow-md hover:bg-kesar-crimson transition-all">
+        <span>Explore Collection</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-kesar-charcoal text-stone-300 pt-16 pb-12 mt-auto border-t border-kesar-gold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-stone-800">
+        <!-- Col 1: Brand -->
+        <div class="space-y-4 md:col-span-2">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-kesar-red text-white font-serif text-xl font-bold flex items-center justify-center border border-kesar-gold">
+              K
+            </div>
+            <div>
+              <span class="font-serif text-2xl font-bold text-white block">KESAR HAAT</span>
+              <span class="text-[11px] uppercase tracking-widest text-kesar-gold">Bazaar-e-Koshur</span>
+            </div>
+          </div>
+          <p class="text-sm text-stone-400 max-w-md leading-relaxed">
+            Preserving what is timeless, celebrating what is Kashmiri, and carrying its legacy forward. Sourced directly from local orchards and family farms in the Valley.
+          </p>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Explore</h4>
+          <ul class="space-y-2 text-sm text-stone-400">
+            <li><a href="index.html" class="hover:text-kesar-gold transition-colors">Home</a></li>
+            <li><a href="catalog.html" class="hover:text-kesar-gold transition-colors">Spices & Dry Fruits</a></li>
+            <li><a href="about.html" class="hover:text-kesar-gold transition-colors">Our Story & Heritage</a></li>
+            <li><a href="cart.html" class="hover:text-kesar-gold transition-colors">Your Cart</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact & Authenticity -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Origins & Contact</h4>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            Orchards: Sopore & Srinagar, Kashmir.<br>
+            Distribution: Lucknow & Pan-India.
+          </p>
+          <div class="pt-2 text-xs text-kesar-gold font-medium">
+            WhatsApp: +91 95861 19191
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+        <p>© 2026 Kesar Haat (Bazaar-e-Koshur). All rights reserved.</p>
+        <p class="italic text-stone-400 font-serif text-sm">“Authentic. Pure. From the Valley to Your Home.”</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/store.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCart();
+      lucide.createIcons();
+    });
+
+    function renderCart() {
+      const cart = getCart();
+      const wrapper = document.getElementById('cart-content-wrapper');
+      const emptyView = document.getElementById('empty-cart-view');
+      const list = document.getElementById('cart-items-list');
+      const countEl = document.getElementById('cart-item-count');
+
+      if (!cart || cart.length === 0) {
+        if (wrapper) wrapper.classList.add('hidden');
+        if (emptyView) emptyView.classList.remove('hidden');
+        updateCartBadges();
+        return;
+      }
+
+      if (wrapper) wrapper.classList.remove('hidden');
+      if (emptyView) emptyView.classList.add('hidden');
+
+      if (countEl) countEl.textContent = cart.length;
+
+      list.innerHTML = cart.map(item => `
+        <div class="py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <img src="${item.image}" alt="${item.name}" class="w-16 h-16 rounded-xl object-cover border border-stone-200">
+            <div>
+              <span class="text-[10px] text-kesar-saffron font-bold block uppercase">${item.alternateName || ''}</span>
+              <h3 class="font-serif text-base font-bold text-kesar-charcoal leading-snug">${item.name}</h3>
+              <span class="text-xs text-stone-500">Pack: <strong class="text-stone-700">${item.packSize}</strong></span>
+              <div class="text-xs font-semibold text-kesar-crimson mt-0.5">${formatCurrency(item.unitPrice)} each</div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between w-full sm:w-auto gap-6">
+            <!-- Quantity buttons -->
+            <div class="flex items-center border border-stone-300 rounded-lg bg-stone-50 overflow-hidden text-xs">
+              <button onclick="handleQtyChange('${item.cartItemId}', -1)" class="px-2.5 py-1.5 hover:bg-stone-200 font-bold text-stone-700">-</button>
+              <span class="px-3 py-1.5 font-bold min-w-[28px] text-center">${item.quantity}</span>
+              <button onclick="handleQtyChange('${item.cartItemId}', 1)" class="px-2.5 py-1.5 hover:bg-stone-200 font-bold text-stone-700">+</button>
+            </div>
+
+            <!-- Line total -->
+            <div class="text-right min-w-[80px]">
+              <span class="font-serif text-base font-bold text-kesar-charcoal block">${formatCurrency(item.unitPrice * item.quantity)}</span>
+            </div>
+
+            <!-- Delete button -->
+            <button onclick="handleRemoveItem('${item.cartItemId}')" class="text-stone-400 hover:text-rose-600 p-1" title="Remove item">
+              <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      `).join('');
+
+      const total = getCartTotal();
+      document.getElementById('summary-subtotal').textContent = formatCurrency(total);
+      document.getElementById('summary-total').textContent = formatCurrency(total);
+
+      lucide.createIcons();
+      updateCartBadges();
+    }
+
+    function handleQtyChange(cartItemId, delta) {
+      updateCartQuantity(cartItemId, delta);
+      renderCart();
+    }
+
+    function handleRemoveItem(cartItemId) {
+      removeFromCart(cartItemId);
+      renderCart();
+    }
+
+    function handleClearCart() {
+      if (confirm('Are you sure you want to clear your basket?')) {
+        saveCart([]);
+        renderCart();
+        showToast('Basket cleared', 'info');
+      }
+    }
+
+    function submitWhatsAppOrder() {
+      const name = document.getElementById('cust-name').value.trim();
+      const phone = document.getElementById('cust-phone').value.trim();
+      const city = document.getElementById('cust-city').value.trim();
+      const address = document.getElementById('cust-address').value.trim();
+
+      const url = generateWhatsAppOrderUrl({ name, phone, city, address });
+      if (url) {
+        window.open(url, '_blank');
+      } else {
+        alert('Your basket is empty!');
+      }
+    }
+  </script>
+</body>
+</html>
