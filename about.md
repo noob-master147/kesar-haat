@@ -1,7 +1,7 @@
 # KESAR | Bazaar-e-Koshur
 ### *“Marketplace of Kashmir”*
 
-![Kesar Banner](assets/banner1.jpeg)
+![Kesar Banner](assets/banner.jpeg)
 
 > [!NOTE]
 > **Brand Identity:** **KESAR** · *Bazaar-e-Koshur* *(Marketplace of Kashmir)*  
@@ -13,11 +13,11 @@
 
 > **More than commodities, we bring you the soul of Kashmir.**  
 >  
-> Its age-old flavours, treasured traditions, authentic craftsmanship and rich cultural heritage—carefully sourced from the valleys of Kashmir and brought to homes beyond its mountains.  
+> Its age-old flavours, treasured traditions, authentic craftsmanship and rich cultural heritage, carefully sourced from the valleys of Kashmir and brought to homes beyond its mountains.  
 >  
 > *Our endeavour is simple: preserve what is timeless, celebrate what is Kashmiri, and carry its legacy forward.*  
 >  
-> **Kashmir — its flavours, its heritage, its soul.**
+> **Kashmir: its flavours, its heritage, its soul.**
 
 ---
 
@@ -27,15 +27,17 @@ Our connection with Kashmir is not a business idea. **It is our inheritance.**
 
 My father, **Durganath Tikoo**, grew up in Shalakadal, Habbakadal, Srinagar, in the family home built by my grandfather in the early 19th century. Like many Kashmiri Pandit families, our family had a long tradition of serving in Government.
 
-My mother, **Late Asha Pandita Tikoo**, grew up in Zolur village, Sopore, the daughter of a farmer. She brought with her something truly special—a natural, almost God-gifted understanding of food, spices, fruits and dry fruits.
+My mother, **Late Asha Pandita Tikoo**, grew up in Zolur village, Sopore, the daughter of a farmer. She brought with her something truly special: a natural, almost God-gifted understanding of food, spices, fruits and dry fruits.
+
+![Durganath Tikoo & Late Asha Pandita Tikoo](assets/parents.jpeg)
 
 Because of my father's postings, our family moved across different parts of India, eventually making Lucknow our home. Yet, wherever we lived, **Kashmir travelled with us.**
 
 While the world around us embraced new cuisines and changing tastes, our home remained anchored in the traditions we had inherited. The food, the aromas, the recipes and the rituals of Kashmir remained unchanged.
 
-And at the heart of it all was my mother's kitchen—where generations-old Kashmiri flavours came alive through her extraordinary culinary skills. Her food and lavish Kashmiri spreads became a cherished part of our family identity.
+And at the heart of it all was my mother's kitchen, where generations-old Kashmiri flavours came alive through her extraordinary culinary skills. Her food and lavish Kashmiri spreads became a cherished part of our family identity.
 
-Today, **Kashmir Commodities** is our way of taking that legacy beyond our home—sharing the authentic flavours, traditions and treasures of Kashmir with the world.
+Today, **Kashmir Commodities** is our way of taking that legacy beyond our home, sharing the authentic flavours, traditions and treasures of Kashmir with the world.
 
 > [!IMPORTANT]
 > *Because some legacies are not meant to be forgotten.*  
@@ -47,16 +49,18 @@ Today, **Kashmir Commodities** is our way of taking that legacy beyond our home�
 
 For nearly 30 years, I lived the corporate life, crisscrossing India and working overseas. Yet, through it all, Kashmir remained close to my heart.
 
-My love for cooking began in college. It runs in our family—and I was always drawn to the kitchen, experimenting with flavours, participating in culinary fests and, most importantly, staying connected to my *Matamaal* (*Nanihaal*) and the traditions I grew up with.
+My love for cooking began in college. It runs in our family, and I was always drawn to the kitchen, experimenting with flavours, participating in culinary fests and, most importantly, staying connected to my *Matamaal* (*Nanihaal*) and the traditions I grew up with.
 
 Over time, I realised that many of those authentic Kashmiri aromas, ingredients and traditions were slowly fading from everyday life.
 
 That became the inspiration for **Kashmir Commodities**.
 
-My second innings is therefore more than a business. It is a return to my roots—with a promise to preserve what we inherited and bring the authentic flavours of Kashmir to homes everywhere.
+My second innings is therefore more than a business. It is a return to my roots, with a promise to preserve what we inherited and bring the authentic flavours of Kashmir to homes everywhere.
 
 > [!NOTE]
-> **Kashmir Commodities** — *Bringing the Valley to your kitchen.*
+> **Kashmir Commodities**: *Bringing the Valley to your kitchen.*
+
+![Sandeep Tikoo - Founder](assets/aboutme.jpeg)
 
 **Founder:**  
 **Sandeep Tikoo**
@@ -113,7 +117,7 @@ Kashmiri Lal Mirch is cherished for its brilliant natural red colour, gentle war
 - **Taste Profile:** `Mild` • `Earthy` • `Aromatic` • `Gently Warm`
 
 > [!TIP]
-> **Catalogue Line:** *“A touch of Kashmiri Lal Mirch—colour, warmth and the soul of the Valley.”*
+> **Catalogue Line:** *“A touch of Kashmiri Lal Mirch: colour, warmth and the soul of the Valley.”*
 
 ---
 
@@ -191,7 +195,7 @@ Kashmiri Kagzi Badaam is cherished for its thin shell, naturally sweet flavour a
 - **Taste Profile:** `Delicate` • `Naturally Sweet` • `Creamy` • `Nutty`
 
 > [!TIP]
-> **Catalogue Line:** *“A delicate shell, a precious kernel—Kashmir’s goodness, naturally.”*
+> **Catalogue Line:** *“A delicate shell, a precious kernel: Kashmir’s goodness, naturally.”*
 
 ---
 

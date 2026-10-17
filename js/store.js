@@ -14,7 +14,7 @@ const FALLBACK_MENU = {
     english_translation: "Marketplace of Kashmir",
     tagline: "Authentic. Pure. From the Valley to Your Home.",
     banner: "assets/banner.jpeg",
-    cover: "assets/cover.jpeg",
+    founder_image: "assets/aboutme.jpeg",
     trust_badges: [
       "Naturally Sourced",
       "Authentic Kashmiri Produce",
@@ -281,7 +281,7 @@ function generateWhatsAppOrderUrl(customerDetails = {}) {
   const cart = getCart();
   if (cart.length === 0) return null;
 
-  let text = `*New Order Inquiry — Kesar Haat (Bazaar-e-Koshur)*\n\n`;
+  let text = `*New Order Inquiry: Kesar Haat (Bazaar-e-Koshur)*\n\n`;
   text += `*Order Items:*\n`;
 
   cart.forEach((item, index) => {
